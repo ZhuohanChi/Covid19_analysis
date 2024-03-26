@@ -1,0 +1,57 @@
+---
+title: DATA550_final_project2
+author: Zhuohan Chi
+output: html_document
+---
+
+```{r, here-i-am, include = FALSE}
+here::i_am(
+  "report.Rmd"
+)
+```
+
+## Introduction
+
+This R Markdown report delves into a detailed exploratory data analysis of the comprehensive dataset detailing COVID-19 related death counts, death rates, and percentages of total deaths. Spanning all 50 states, the District of Columbia, New York City (exclusive of New York State), and Puerto Rico, the data segments by jurisdiction of residence across various timeframes, including 3-month intervals, weekly, and cumulatively since January 1, 2020. By utilizing confirmed or presumed COVID-19 deaths coded to ICD-10 code U07.1, the report aims to uncover trends and patterns in COVID-19 fatalities over time and by location, employing visualizations like time series graphs and bar charts to compare death counts and rates across jurisdictions. This analysis seeks to provide a granular view of the pandemic's impact across different regions and periods, enhancing our understanding of its health implications.
+
+
+
+## Hypothetical analysis
+
+```{r, table1}
+readRDS(
+  file = here::here("table/ummary_by_jurisdiction_excluding_1_to_10.rds")
+)
+```
+
+Table 1: The table,"COVID-19 Death Counts and Rates by Jurisdiction," is organized to display jurisdictions in descending order based on total COVID-19 deaths. This format emphasizes areas with the highest mortality, showcasing the varied impact of the pandemic across regions. It provides a clear comparative perspective on the severity of COVID-19's toll, facilitating an immediate grasp of which jurisdictions have been most affected in terms of absolute death counts.
+
+```{r, table2}
+readRDS(
+  here::here("table/rate_comparison_regions_1_to_10.rds")
+)
+```
+
+Table 2: That compares crude and age-adjusted COVID-19 death rates across Regions 1 to 10, highlighting how demographic factors affect mortality. Crude rates show raw death counts, while age-adjusted rates provide a fair comparison by accounting for age distribution differences. This analysis helps understand the pandemic's varying impacts, crucial for informed public health responses.
+
+```{r, plot-data}
+#| fig.align = "center",
+#| out.width = "600px"
+knitr::include_graphics(
+  here::here("figure/plot_1.png")
+  #! TO DO: add appropriate file path to read scatter plot
+)
+```
+
+Figure 1: The figure represents a stacked area chart visualizing the cumulative trends of COVID-19 deaths for Regions 1 to 10 over time. Each region is differentiated by a unique color, illustrating how the impact of COVID-19 has evolved within these jurisdictions. The x-axis denotes the time, marked by the end dates of data collection periods, while the y-axis quantifies the cumulative number of COVID-19 deaths. This visualization enables the comparison of COVID-19's toll across different regions, highlighting variations in the pandemic's severity and spread. It provides a clear visual narrative of the pandemic's dynamics, showcasing periods of increase or stabilization in death counts within the specified regions.
+
+```{r, plot-data2}
+#| fig.align = "center",
+#| out.width = "600px"
+knitr::include_graphics(
+  here::here("figure/plot_2.png")
+  #! TO DO: add appropriate file path to read scatter plot
+)
+```
+
+Figure 2: The line chart "Comparison of Crude and Age-Adjusted Death Rates for Region 1" showcases the evolution of COVID-19 mortality rates over two years. The blue line represents the crude death rate, indicating the overall number of deaths per 100,000 population, while the red line shows the age-adjusted death rate, which accounts for the population's age distribution. This comparison highlights how demographic factors affect mortality rates, providing essential insights into the pandemic's impact in Region 1.
