@@ -14,6 +14,11 @@ List any prerequisites required to run the project, including software, librarie
     ```R
     install.packages(c("dplyr", "ggplot2", "knitr", "here"))
     ```
+- Or run the following command:
+    ```sh
+    make install
+    ```
+   This command will execute the Makefile which restoring the package environment for the project
 
 ## Generating the Final Report
 

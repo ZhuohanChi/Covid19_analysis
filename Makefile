@@ -1,3 +1,6 @@
+.PHONY: install
+install:
+	Rscript -e “renv:: restore (prompt = FALSE)”
 
 .PHONY: all
 all: table/ummary_by_jurisdiction_excluding_1_to_10.rds table/rate_comparison_regions_1_to_10.rds figure/plot_1.png figure/plot_2.png report.html
