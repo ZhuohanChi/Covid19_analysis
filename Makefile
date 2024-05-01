@@ -1,6 +1,7 @@
 .PHONY: install
 install:
-	Rscript -e “renv:: restore (prompt = FALSE)”
+		Rscript -e "renv::restore(prompt=FALSE)"
+
 
 .PHONY: all
 all: table/ummary_by_jurisdiction_excluding_1_to_10.rds table/rate_comparison_regions_1_to_10.rds figure/plot_1.png figure/plot_2.png report.html
@@ -35,11 +36,11 @@ project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
 		touch $@
 	
 # rule to build the report automatically in container for Windows
-report/report.html: project_image
+report/w_report.html: project_image
 		docker run -v "/$$(pwd)/report":/project/report zhuohanchi/project_image 
 		
 # rule to build the report automatically in container for Mac/Linux
-report/report.html: project_image
+report/ml_report.html: project_image
 		docker run -v "$$(pwd)/report":/project/report zhuohanchi/project_image 
 
 

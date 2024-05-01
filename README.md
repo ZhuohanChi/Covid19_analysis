@@ -61,7 +61,9 @@ To generate the report by Docker:
   `docker run -v "$(pwd)/report":/project/report zhuohanchi/project_image`
   
   Or 
-  In terminal, run `make report/report.html`
+  In terminal, run `make w_report/report.html` for Windows
+  
+  In terminal, run `make ml_report/report.html` for Mac or Linux
   
 Link to image: https://hub.docker.com/repository/docker/zhuohanchi/project_image/general
 
