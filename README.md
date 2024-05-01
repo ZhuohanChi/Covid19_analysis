@@ -41,6 +41,8 @@ To generate the report by Docker:
   
 Link to image: https://hub.docker.com/repository/docker/zhuohanchi/project_image/general
 
+If miss input command `make clean` that cleaned all outputs, which will cause error in build docker image. Then in terminal, run `make all` to generate all outputs. Then you can successfully build a local Docker image.
+
 ## Generating the Final Report in R
 
 To generate the final report, follow these steps:
