@@ -44,3 +44,22 @@ To remove the generated files (tables, figures, and report) and clean the projec
 
 ```sh
 make clean
+
+## Docker
+
+To build a local Docker image:
+  In terminal, run command `docker build -t zhuohanchi/project_image .`
+  Or
+  In terminal, run `make project image`
+  
+To generate the report by Docker:
+  For Windows machine, in terminal, run command 
+  `docker run -v /"$(pwd)/report":/project/report zhuohanchi/project_image`
+  For Windows machine, in terminal, run command 
+  `docker run -v "$(pwd)/report":/project/report zhuohanchi/project_image`
+  Or 
+  In terminal, run `make report/report.html`
+  
+
+  
+

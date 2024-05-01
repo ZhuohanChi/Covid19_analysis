@@ -24,3 +24,22 @@ report.html: report.Rmd render_report.R table/ummary_by_jurisdiction_excluding_1
 clean:
 	rm -f figure/*.png table/*.rds report.html
 
+# Docker(run on local machine)
+
+PROJECTFILES = report.Rmd code/01_make_table1.R code/02_make_table2.R code/03_make_plot1.R code/04_make_plot2.R render_report.R Makefile
+REVFILES = renv.lock renv/activate.R renv/settings.json
+
+# rules to build image
+project_image: Dockerfile $(PROJECTFILES) $(RENVFILES)
+		docker build -t zhuohanchi/project_image .
+		touch $@
+	
+# rule to build the report automatically in container for Windows
+report/report.html: project_image
+		docker run -v "/$$(pwd)/report":/project/report zhuohanchi/project_image 
+		
+# rule to build the report automatically in container for Mac/Linux
+report/report.html: project_image
+		docker run -v "$$(pwd)/report":/project/report zhuohanchi/project_image 
+
+
