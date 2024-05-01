@@ -20,7 +20,28 @@ List any prerequisites required to run the project, including software, librarie
     ```
    This command will execute the Makefile which restoring the package environment for the project
 
-## Generating the Final Report
+## Generating the Final Report in Docker
+
+To build a local Docker image:
+  In terminal, run command `docker build -t zhuohanchi/project_image .`
+  Or
+  In terminal, run `make project_image`
+  
+To generate the report by Docker:
+  For Windows machine, in terminal, run command 
+  `docker run -v /"$(pwd)/report":/project/report zhuohanchi/project_image`
+  
+  For Mac/Linux machine, in terminal, run command 
+  `docker run -v "$(pwd)/report":/project/report zhuohanchi/project_image`
+  
+  Or 
+  In terminal, run `make report/w_report.html` for Windows
+  
+  In terminal, run `make report/ml_report.html` for Mac or Linux
+  
+Link to image: https://hub.docker.com/repository/docker/zhuohanchi/project_image/general
+
+## Generating the Final Report in R
 
 To generate the final report, follow these steps:
 
@@ -46,26 +67,7 @@ To remove the generated files (tables, figures, and report) and clean the projec
 make clean
 ```
 
-## Docker
 
-To build a local Docker image:
-  In terminal, run command `docker build -t zhuohanchi/project_image .`
-  Or
-  In terminal, run `make project_image`
-  
-To generate the report by Docker:
-  For Windows machine, in terminal, run command 
-  `docker run -v /"$(pwd)/report":/project/report zhuohanchi/project_image`
-  
-  For Mac/Linux machine, in terminal, run command 
-  `docker run -v "$(pwd)/report":/project/report zhuohanchi/project_image`
-  
-  Or 
-  In terminal, run `make report/w_report.html` for Windows
-  
-  In terminal, run `make report/ml_report.html` for Mac or Linux
-  
-Link to image: https://hub.docker.com/repository/docker/zhuohanchi/project_image/general
 
   
 
