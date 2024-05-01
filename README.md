@@ -44,6 +44,7 @@ To remove the generated files (tables, figures, and report) and clean the projec
 
 ```sh
 make clean
+```
 
 ## Docker
 
