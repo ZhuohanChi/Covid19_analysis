@@ -56,8 +56,10 @@ To build a local Docker image:
 To generate the report by Docker:
   For Windows machine, in terminal, run command 
   `docker run -v /"$(pwd)/report":/project/report zhuohanchi/project_image`
-  For Windows machine, in terminal, run command 
+  
+  For Mac/Linux machine, in terminal, run command 
   `docker run -v "$(pwd)/report":/project/report zhuohanchi/project_image`
+  
   Or 
   In terminal, run `make report/report.html`
   
