@@ -51,7 +51,7 @@ make clean
 To build a local Docker image:
   In terminal, run command `docker build -t zhuohanchi/project_image .`
   Or
-  In terminal, run `make project image`
+  In terminal, run `make project_image`
   
 To generate the report by Docker:
   For Windows machine, in terminal, run command 
@@ -61,9 +61,9 @@ To generate the report by Docker:
   `docker run -v "$(pwd)/report":/project/report zhuohanchi/project_image`
   
   Or 
-  In terminal, run `make w_report/report.html` for Windows
+  In terminal, run `make report/w_report.html` for Windows
   
-  In terminal, run `make ml_report/report.html` for Mac or Linux
+  In terminal, run `make report/ml_report.html` for Mac or Linux
   
 Link to image: https://hub.docker.com/repository/docker/zhuohanchi/project_image/general
 
