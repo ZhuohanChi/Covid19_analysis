@@ -63,6 +63,7 @@ To generate the report by Docker:
   Or 
   In terminal, run `make report/report.html`
   
+Link to image: https://hub.docker.com/repository/docker/zhuohanchi/project_image/general
 
   
 
