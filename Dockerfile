@@ -34,5 +34,5 @@ RUN Rscript -e "renv::restore(prompt=FALSE)"
 
 RUN mkdir report
 
-CMD make all && mv report.html report
+CMD make && mv report.html report
 

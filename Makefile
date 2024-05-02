@@ -22,9 +22,6 @@ clean:
 install:
 		Rscript -e "renv::restore(prompt=FALSE)"
 
-.PHONY: all
-all: table/ummary_by_jurisdiction_excluding_1_to_10.rds table/rate_comparison_regions_1_to_10.rds figure/plot_1.png figure/plot_2.png report.html
-
 # Docker(run on local machine)
 
 PROJECTFILES = report.Rmd code/01_make_table1.R code/02_make_table2.R code/03_make_plot1.R code/04_make_plot2.R render_report.R Makefile
