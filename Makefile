@@ -13,14 +13,15 @@ figure/plot_1.png: code/03_make_plot1.R data/Provisional_COVID-19_death_counts__
 figure/plot_2.png: code/04_make_plot2.R data/Provisional_COVID-19_death_counts__rates__and_percent_of_total_deaths__by_jurisdiction_of_residence_20240216.csv
 	Rscript code/04_make_plot2.R
 
+.PHONY: install
+install:
+		Rscript -e "renv::restore(prompt=FALSE)"
 
 .PHONY: clean
 clean:
 	rm -f figure/*.png table/*.rds report.html
 	
-.PHONY: install
-install:
-		Rscript -e "renv::restore(prompt=FALSE)"
+
 
 # Docker(run on local machine)
 
