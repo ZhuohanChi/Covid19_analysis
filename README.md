@@ -37,11 +37,9 @@ To generate the report by Docker:
   Or 
   In terminal, run `make report/w_report.html` for Windows
   
-  In terminal, run `make report/ml_report.html` for Mac or Linux
   
 Link to image: https://hub.docker.com/repository/docker/zhuohanchi/project_image/general
 
-If miss input command `make clean` that cleaned all outputs, which will cause error in build docker image. Then in terminal, run `make all` to generate all outputs. Then you can successfully build a local Docker image.
 
 ## Generating the Final Report in R
 
